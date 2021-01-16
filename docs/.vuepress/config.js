@@ -1,5 +1,4 @@
 const {appId, appKey} = require('../../secret')
-const moment = require('moment')
 
 module.exports = {
     base: '/',
@@ -24,7 +23,6 @@ module.exports = {
         modePicker: false, // 默认 true，false 不显示模式调节按钮，true 则显示
         noFoundPageByTencent: false, //
         smoothScroll: true,
-        lastUpdated: '最后更新时间',
         nav: [
             {text: '首页', link: '/', icon: 'reco-home'},
             {text: '时间线', link: '/timeline/', icon: 'reco-date'},
@@ -45,7 +43,20 @@ module.exports = {
             ]
         },
 
-        friendLink: [],
+        friendLink: [
+            {
+                title: 'vuepress',
+                desc: 'Vue-powered Static Site Generator.',
+                logo: "https://v1.vuepress.vuejs.org/hero.png",
+                link: 'https://v1.vuepress.vuejs.org/'
+            },
+            {
+                title: 'vuepress-theme-reco',
+                desc: 'A simple and beautiful vuepress Blog & Doc theme.',
+                logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+                link: 'https://vuepress-theme-reco.recoluan.com'
+            },
+        ],
 
         logo: '/avatar.png',
 
@@ -67,20 +78,7 @@ module.exports = {
         }
     },
 
-    plugins: [
-        [
-            '@vuepress/last-updated',
-            {
-                transformer: (timestamp, lang) => {
-                    moment.locale(lang)
-                    return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
-                },
-                dateOptions: {
-                    hour12: false
-                }
-            }
-        ]
-    ],
+    plugins: [],
 
     markdown: {
         // 是否在每个代码块的左侧显示行号。
