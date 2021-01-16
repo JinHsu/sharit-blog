@@ -1,4 +1,5 @@
 const {appId, appKey} = require('../../secret')
+const moment = require('moment')
 
 module.exports = {
     base: '/',
@@ -23,6 +24,7 @@ module.exports = {
         modePicker: false, // 默认 true，false 不显示模式调节按钮，true 则显示
         noFoundPageByTencent: false, //
         smoothScroll: true,
+        lastUpdated: '最后更新时间',
         nav: [
             {text: '首页', link: '/', icon: 'reco-home'},
             {text: '时间线', link: '/timeline/', icon: 'reco-date'},
@@ -65,7 +67,20 @@ module.exports = {
         }
     },
 
-    plugins: [],
+    plugins: [
+        [
+            '@vuepress/last-updated',
+            {
+                transformer: (timestamp, lang) => {
+                    moment.locale(lang)
+                    return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
+                },
+                dateOptions: {
+                    hour12: false
+                }
+            }
+        ]
+    ],
 
     markdown: {
         // 是否在每个代码块的左侧显示行号。
