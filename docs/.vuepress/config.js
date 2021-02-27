@@ -58,7 +58,7 @@ module.exports = {
             },
         ],
 
-        logo: '/avatar.png',
+        logo: '/avatar.jpg',
 
         // 备案
         record: '京ICP备19020199号-1',
@@ -69,7 +69,7 @@ module.exports = {
 
         // author
         author: 'JinHsu',
-        authorAvatar: '/avatar.png',
+        authorAvatar: '/avatar.jpg',
 
         // 评论
         valineConfig: {

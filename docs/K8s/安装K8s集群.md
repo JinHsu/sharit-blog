@@ -246,7 +246,7 @@ yum install -y docker-ce-19.03.0 docker-ce-cli-19.03.0 containerd.io
 mkdir -p /etc/docker
 tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://zt8bw0cg.mirror.aliyuncs.com","http://hubmirror.c.163.com","https://docker.mirrors.ustc.edu.cn","https://dockerhub.azk8s.cn","https://registry.docker-cn.com"]
+  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn","http://hubmirror.c.163.com","https://zt8bw0cg.mirror.aliyuncs.com","https://dockerhub.azk8s.cn","https://registry.docker-cn.com"]
 }
 EOF
 systemctl daemon-reload
@@ -378,8 +378,10 @@ kubeadm join 10.0.2.15:6443 --token 46jmx6.dmgawbd78v4fvpwa \
 
 > 如果长时间没有起来，建议重启节点。token有效期一般为24小时，可查看token是否有效，然后重新生成token
 
-```
-kubeadm token list
+```sh
+kubeadm token create
+kubeadm token list  | awk -F" " '{print $1}' |tail -n 1
+
 openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
 ```
 
@@ -396,13 +398,21 @@ systemctl restart kubelet
 systemctl restart docker
 ```
 
-## 遇到的问题
+## 删除Node
 
-### 节点的状态为NotReady
+### 卸载节点
 
-检查网络配置：如1.2.2.中所示，确保master和所有的节点都能相互ping通
+```sh
+kubectl drain <node name> --delete-local-data --force --ignore-daemonsets
+```
 
-### 卸载k8s
+### 删除节点
+
+```sh
+kubectl delete node <node name>
+```
+
+### 清空配置（目标节点上执行）
 
 ```sh
 kubeadm reset -f

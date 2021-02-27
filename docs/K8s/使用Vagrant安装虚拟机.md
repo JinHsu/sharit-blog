@@ -38,6 +38,8 @@ cd custom
 
 ```ruby
 Vagrant.configure("2") do |config|
+  #虚拟机名称，vagrant ssh命令后的命名
+  config.vm.define "custom"
 	#镜像
 	config.vm.box = "centos/7"
 	#安装操作系统的host名称

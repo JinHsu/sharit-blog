@@ -141,6 +141,21 @@ docker image pull rabbitmq:3.8.9-management
 
 ## 安装Nacos
 
+```sh
+docker run \
+	--name Nacos \
+	--restart=always \
+	-p 8848:8848 \
+	-e MODE=standalone \
+	-e SPRING_DATASOURCE_PLATFORM=mysql \
+	-e MYSQL_SERVICE_HOST=192.168.1.188 \
+	-e MYSQL_SERVICE_PORT=3306 \
+	-e MYSQL_SERVICE_DB_NAME=nacos_config \
+	-e MYSQL_SERVICE_USER=root \
+	-e MYSQL_SERVICE_PASSWORD=root \
+	-d nacos/nacos-server:1.4.0 \
+```
+
 ## 安装Sentinel
 
 ## 安装Zipkin
