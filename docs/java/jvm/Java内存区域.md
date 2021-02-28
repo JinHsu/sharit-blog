@@ -9,7 +9,7 @@ tags:
 
 ## 运行时数据区
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/jvm-005.png" style="zoom:50%;" />
+<img src="../../.images/jvm-005.png" style="zoom:50%;" />
 
 ### 程序计数器
 
@@ -19,7 +19,7 @@ tags:
 
 线程私有，生命周期与线程相同。
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/jvm-008.png" style="zoom:50%;" />
+<img src="../../.images/jvm-008.png" style="zoom:50%;" />
 
 可能出现的2种异常：
 
@@ -66,13 +66,13 @@ Java堆是垃圾收集器管理的主要区域，分代模型将堆分为：新�
 
 新生代细致一点分为：Eden区，From Survivor区（S0），To Survivor区（S1）。
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/jvm-006.png" style="zoom: 50%;" />
+<img src="../../.images/jvm-006.png" style="zoom: 50%;" />
 
 Java堆中可能划分出多个线程私有的分配缓冲区（Thread Local Allocation Buffer，TLAB），以减小内存分配时锁的竞争，提高效率。
 
 > -XX:+/-UseTLAB
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/jvm-007.png" style="zoom: 50%;" />
+<img src="../../.images/jvm-007.png" style="zoom: 50%;" />
 
 进一步划分的目的都是为了有效高效的回收内存。
 
@@ -208,17 +208,17 @@ Java堆中可能划分出多个线程私有的分配缓冲区（Thread Local All
 
 对象在内存中存储着3块区域：对象头（Header）、实例数据（Instance Data）、对齐填充（Padding）。
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/jvm-009.png" style="zoom:50%;" />
+<img src="../../.images/jvm-009.png" style="zoom:50%;" />
 
 #### 对象头
 
 对象头一般包含3部分：
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/jvm-011.png" style="zoom:50%;" />
+<img src="../../.images/jvm-011.png" style="zoom:50%;" />
 
 Mark Word存储对象自身的运行时数据。
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/jvm-010.png" style="zoom:50%;" />
+<img src="../../.images/jvm-010.png" style="zoom:50%;" />
 
 类型指针，即对象指向它的类元数据的指针，虚拟机通过这个指针来确定这个对象是哪个类的实例。并不是所有的虚拟机实现都必须在对象数据上保留类型指针，也就是说，查找对象的元数据信息并不一定要经过对象本身。
 
@@ -334,11 +334,11 @@ Space losses: 4 bytes internal + 0 bytes external = 4 bytes total
 
 - 使用句柄访问
 
-    <img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/jvm-012.png" style="zoom:50%;" />
+    <img src="../../.images/jvm-012.png" style="zoom:50%;" />
 
 - 使用直接指针访问
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/jvm-013.png" style="zoom:50%;" />
+<img src="../../.images/jvm-013.png" style="zoom:50%;" />
 
 这2种对象访问方式各有优势，使用句柄来访问的最大好处就是reference中存储的是稳定的句柄地址，在对象被移动（垃圾收集时移动对象是非常普遍的行为）时只会改变句柄中的实例数据指针，而reference本身不需要修改。（便于垃圾回收）
 

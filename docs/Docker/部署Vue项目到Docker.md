@@ -72,7 +72,7 @@ server {
 
 项目目录结构
 
-![](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/idea-docker-3.png)
+![](../.images/idea-docker-3.png)
 
 在宿主服务器上创建目录
 
@@ -83,7 +83,7 @@ mkdir -p /etc/nginx/logs
 
 将生成的SSL证书文件复制到服务器对应的目录
 
-![](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/idea-docker-5.png)
+![](../.images/idea-docker-5.png)
 
 ### Docker构建上下文路径
 
@@ -93,7 +93,7 @@ Docker默认会把项目根目录作为上下文环境路径，由于项目根�
 
 :::
 
-![](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/idea-docker-4.png)
+![](../.images/idea-docker-4.png)
 
 > 1.构建镜像时的上下文环境路径
 >
@@ -105,11 +105,11 @@ Docker默认会把项目根目录作为上下文环境路径，由于项目根�
 
 端口映射
 
-![](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/idea-docker-6.png)
+![](../.images/idea-docker-6.png)
 
 目录挂载
 
-![](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/idea-docker-7.png)
+![](../.images/idea-docker-7.png)
 
 ### 项目编译输出目录
 
@@ -136,7 +136,7 @@ vuepress build docs
 
 部署
 
-![](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/idea-docker-8.png)
+![](../.images/idea-docker-8.png)
 
 部署成功日志
 

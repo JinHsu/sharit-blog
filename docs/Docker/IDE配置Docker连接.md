@@ -146,11 +146,11 @@ firewall-cmd --zone=public --add-port=2375/tcp --permanent
 
 服务器添加入规则
 
-![](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/idea-docker-2.png)
+![](../.images/idea-docker-2.png)
 
 ## IDE配置
 
-![](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/idea-docker-1.png)
+![](../.images/idea-docker-1.png)
 
 ## 总结
 

@@ -4,7 +4,7 @@
 
 ## MySQL架构
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/db-A06.jpg" style="zoom:100%;" />
+<img src="../.images/db-A06.jpg" style="zoom:100%;" />
 
 ## MySQL数据文件
 
@@ -47,7 +47,7 @@ mysql> show variables like '%storage_engine%';
 
 1. 缓冲池
 
-    <img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/db-006.png" style="zoom:50%;" />
+    <img src="../.images/db-006.png" style="zoom:50%;" />
 
     ```sql
     mysql> show variables like '%innodb_buffer_pool_size%';
@@ -59,7 +59,7 @@ mysql> show variables like '%storage_engine%';
     mysql> set global innodb_buffer_pool_size=134217728;
     ```
 
-    <img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/db-007.png" style="zoom:50%;" />
+    <img src="../.images/db-007.png" style="zoom:50%;" />
 
     优化后的LRU，新读取的页数据并不是直接放在LRU列表的首部，而是放到LRU列表的midpoint位置。默认该位置在LRU列表长度的`5/8`处。midpoint的位置可由参数`innodb_old_blocks_pct`控制，`innodb_old_blocks_time`参数表示页读取到midpoint位置后需要等待多久才会被加入到LRU列表的热端。
 
@@ -340,7 +340,7 @@ show global status like 'Slow_queries%';--显示慢SQL的条数
 explain select * from rbac_user;
 ```
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/db-005.png" />
+<img src="../.images/db-005.png" />
 
 - id
 
@@ -423,7 +423,7 @@ show create table user;
 
 ### OLTP和OLAP
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/db-A05.jpg" style="zoom:50%;" />
+<img src="../.images/db-A05.jpg" style="zoom:50%;" />
 
 
 
@@ -460,7 +460,7 @@ show create table user;
 
 1. 内连接
 
-    <img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/db-001.png" style="zoom:50%;" />
+    <img src="../.images/db-001.png" style="zoom:50%;" />
 
     ```sql
     SELECT <select_list> FROM A INNER JOIN B
@@ -469,7 +469,7 @@ show create table user;
 
 2. 左连接
 
-    <img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/db-002.png" style="zoom:50%;" />
+    <img src="../.images/db-002.png" style="zoom:50%;" />
 
     ```sql
     SELECT <select_list> FROM A LEFT JOIN B
@@ -482,7 +482,7 @@ show create table user;
 
 3. 右连接
 
-    <img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/db-003.png" style="zoom:50%;" />
+    <img src="../.images/db-003.png" style="zoom:50%;" />
 
     ```sql
     SELECT <select_list> FROM A RIGHT JOIN B
@@ -495,7 +495,7 @@ show create table user;
 
 4. 全连接
 
-    <img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/db-004.png" style="zoom:50%;" />
+    <img src="../.images/db-004.png" style="zoom:50%;" />
 
     ```sql
     SELECT <select_list> FROM A FULL OUTER JOIN B

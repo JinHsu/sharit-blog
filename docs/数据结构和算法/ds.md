@@ -168,7 +168,7 @@ public class Stack<E> {
 
 ### 二叉树
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/ds-001.png" style="zoom:50%;" />
+<img src="../.images/ds-001.png" style="zoom:50%;" />
 
 - 先序遍历
 
@@ -204,15 +204,15 @@ public class Stack<E> {
 
 - 左旋转
 
-    <img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/ds-003.png" style="zoom:50%;" />
+    <img src="../.images/ds-003.png" style="zoom:50%;" />
 
 - 右旋转
 
-    <img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/ds-004.png" style="zoom:50%;" />
+    <img src="../.images/ds-004.png" style="zoom:50%;" />
 
 - 双旋转
 
-    <img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/ds-005.png" style="zoom:50%;" />
+    <img src="../.images/ds-005.png" style="zoom:50%;" />
 
     上述(1)、(2)两者情况分别右旋转和左旋转后并不能满足二叉平衡树的要求，这时候就需要双旋转了。
 
@@ -270,7 +270,7 @@ B*树是B+树的变种，相对于B+树他们的不同之处如下：
 
 ## 图
 
-<img src="https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/ds-006.png" style="zoom:50%;" />
+<img src="../.images/ds-006.png" style="zoom:50%;" />
 
 顶点(vertex)、边(edge)、路径、无向图、有向图、带权图
 

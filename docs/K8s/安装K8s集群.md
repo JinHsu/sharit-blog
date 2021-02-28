@@ -67,7 +67,7 @@ Bringing machine 'k8s-node9' up with 'virtualbox' provider...
 
 命令执行完成后的9台虚拟机：
 
-![k8s-node-1](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/k8s-node-1.PNG)
+![k8s-node-1](../.images/k8s-node-1.PNG)
 
 ### 配置虚拟机
 
@@ -118,13 +118,13 @@ systemctl restart sshd
 
 按照上述步骤修改其他虚拟机的配置。然后通过Xshell连接上述9台虚拟机节点：
 
-![k8s-node-2](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/k8s-node-2.PNG)
+![k8s-node-2](../.images/k8s-node-2.PNG)
 
 #### 修改虚拟机网络
 
 给virtualbox创建一个全局的Nat网络
 
-![k8s-node-3](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/k8s-node-3.PNG)
+![k8s-node-3](../.images/k8s-node-3.PNG)
 
 修改虚拟机的网络时，需要关闭虚拟机：
 
@@ -134,7 +134,7 @@ D:\vagrant\k8s>vagrant halt
 
 修改每台虚拟机的网络，将网卡1连接方式"网络地址转换(NAT)"改为"NAT网络"，界面名称选择上述创建的全局"NAT网络"，然后重新生成Mac地址：
 
-![k8s-node-4](https://bucket-sharit-beijing.oss-cn-beijing.aliyuncs.com/blog/images/k8s-node-4.PNG)
+![k8s-node-4](../.images/k8s-node-4.PNG)
 
 #### 关闭防火墙等
 
